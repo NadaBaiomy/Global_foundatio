@@ -104,7 +104,7 @@ body::after{content:'';position:fixed;inset:0;z-index:300;pointer-events:none;
 .hero .reveal:nth-child(4){transition-delay:.18s}.hero .reveal:nth-child(5){transition-delay:.24s}
 .hero-visual{position:relative;margin-bottom:26px}
 .hero-photo{border:1.5px solid var(--ink);box-shadow:12px 12px 0 -3px var(--paper-2),12px 12px 0 -2px var(--ink);overflow:hidden}
-.hero-photo img{aspect-ratio:4/4.7;width:100%;object-fit:cover;filter:sepia(.15) saturate(.92);transition:filter .6s,transform .6s}
+.hero-photo img{aspect-ratio:16/10;width:100%;object-fit:cover;filter:sepia(.15) saturate(.92);transition:filter .6s,transform .6s}
 .hero-photo:hover img{filter:none;transform:scale(1.03)}
 .stamp{position:absolute;width:clamp(108px,13vw,164px);inset-inline-end:-30px;bottom:-38px;filter:drop-shadow(0 6px 14px rgba(33,29,21,.2))}
 .stamp-svg{width:100%;height:100%;display:block}
@@ -384,6 +384,36 @@ tbody tr:last-child td{border-bottom:0}
   .slabel{font-size:.6rem}
   .steps{padding-inline:8px}
 }
+/* ===== بانر التوريدات (بديل الصورة) ===== */
+.hero-banner{position:relative;background:linear-gradient(160deg,#F5F4F0 0%,#E9E7E0 100%);border:1.5px solid var(--ink);box-shadow:12px 12px 0 -3px var(--paper-2),12px 12px 0 -2px var(--ink);padding:clamp(26px,3.4vw,40px) clamp(20px,3vw,36px) clamp(18px,2.4vw,26px);overflow:hidden}
+.hb-swoosh{position:absolute;top:-84px;left:-84px;width:200px;height:200px;border-radius:50%;background:var(--green)}
+.hb-swoosh::after{content:'';position:absolute;inset:16px;border-radius:50%;border:2px solid rgba(255,255,255,.28)}
+.hb-badge{position:absolute;top:16px;inset-inline-start:16px;width:104px;height:104px;border-radius:50%;background:var(--green);display:grid;place-items:center;text-align:center;box-shadow:0 0 0 3px #fff,0 0 0 4.5px var(--green)}
+.hb-badge b{font:800 1rem/1.25 var(--f-head);color:#fff;display:block}
+.hb-badge span{display:block;font:600 .52rem/1.4 var(--f-head);color:#DCE8DF;margin-top:3px;border-top:1px solid rgba(255,255,255,.4);padding-top:3px}
+.hb-title{font:800 clamp(2.4rem,4.6vw,3.6rem)/1.1 var(--f-head);color:var(--green-deep);text-align:center;margin-top:2px}
+.hb-sub{font:700 clamp(1.02rem,2vw,1.4rem) var(--f-head);color:var(--ink);text-align:center;margin-top:2px}
+.hb-rule{display:flex;align-items:center;gap:10px;max-width:340px;margin:12px auto 0}
+.hb-rule i{flex:1;height:2px;background:var(--green)}
+.hb-rule em{width:9px;height:9px;border-radius:50%;background:var(--green);flex-shrink:0}
+.hb-slogan{font:700 clamp(.95rem,1.8vw,1.2rem) var(--f-head);color:var(--green);text-align:center;margin-top:10px}
+.hb-icons{display:flex;justify-content:center;gap:clamp(14px,2.6vw,34px);margin-top:clamp(16px,2.6vw,26px);flex-wrap:wrap}
+.hb-ic{text-align:center;max-width:120px}
+.hb-ic .cir{width:54px;height:54px;margin-inline:auto;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#fff;box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--green)}
+.hb-ic .cir svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hb-ic b{display:block;font:700 .82rem var(--f-head);color:var(--ink);margin-top:8px}
+.hb-ic small{display:block;font-size:.6rem;color:var(--ink-2);line-height:1.5;margin-top:2px}
+.hb-bar{display:flex;justify-content:space-between;align-items:center;gap:10px 18px;flex-wrap:wrap;background:#26241F;border-radius:14px;padding:12px 18px;margin-top:clamp(18px,3vw,28px)}
+.hb-item{display:flex;align-items:center;gap:9px;color:#F4EEE1;font:700 .92rem var(--f-head);white-space:nowrap}
+.hb-item .hb-dot{width:30px;height:30px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#fff;flex-shrink:0}
+.hb-item .hb-dot .ic{width:15px;height:15px}
+@media (max-width:640px){
+  .hb-swoosh{width:110px;height:110px;top:-60px;left:-60px}
+  .hb-badge{width:80px;height:80px;top:10px;inset-inline-start:10px}
+  .hb-badge b{font-size:.78rem}
+  .hb-badge span{font-size:.44rem}
+}
+
 </style>
 </head>
 <body>
@@ -419,7 +449,7 @@ tbody tr:last-child td{border-bottom:0}
 <div class="topstrip">
   <div class="wrap">
     <span style="display:flex;gap:8px;align-items:center"><svg class="ic xs"><use href="#i-pin"/></svg> توريدات — القاهرة · جملة ومفرق</span>
-    <span class="ts-left" style="display:flex;gap:8px;align-items:center"><svg class="ic xs"><use href="#i-phone"/></svg> ٠١٠ ٠١٢٣ ٤٥٦٧ · السبت – الخميس</span>
+    <span class="ts-left" style="display:flex;gap:8px;align-items:center"><svg class="ic xs"><use href="#i-phone"/></svg> 01141218126 · السبت – الخميس</span>
   </div>
 </div>
 
@@ -456,7 +486,7 @@ tbody tr:last-child td{border-bottom:0}
     <a href="#/admin" data-action="close-menu"><span>الإدارة</span><i>٠٥</i></a>
     <a href="#/about" data-action="close-menu"><span>عن الشركة</span><i>٠٦</i></a>
   </nav>
-  <div class="mmenu-foot">توريدات · القاهرة — ٠١٠ ٠١٢٣ ٤٥٦٧</div>
+  <div class="mmenu-foot">توريدات · القاهرة — 01141218126</div>
 </div>
 
 <main id="app"></main>
@@ -472,7 +502,7 @@ tbody tr:last-child td{border-bottom:0}
           <path d="M8.5 24.5h47M8.5 39.5h47" stroke="currentColor" stroke-width="2" fill="none"/>
           <circle cx="32" cy="32" r="4.6" fill="#B8862B" stroke="currentColor" stroke-width="1.6"/>
         </svg>
-        <p>مؤسسة مصرية متخصصة في توريد المستهلكات للشركات والمصانع والمطاعم — جملة ومفرق من قلب القاهرة منذ ٢٠٠٩.</p>
+        <p>مؤسسة مصرية متخصصة في توريد المستهلكات للشركات والمصانع والمطاعم — جملة ومفرق من قلب القاهرة منذ 2018.</p>
       </div>
       <div class="f-col">
         <h4>روابط سريعة</h4>
@@ -484,8 +514,8 @@ tbody tr:last-child td{border-bottom:0}
       </div>
       <div class="f-col">
         <h4>تواصل معنا</h4>
-        <span><svg class="ic"><use href="#i-phone"/></svg> ٠١٠ ٠١٢٣ ٤٥٦٧</span>
-        <span><svg class="ic"><use href="#i-pin"/></svg> ١٥ شارع رمسيس، القاهرة</span>
+        <span><svg class="ic"><use href="#i-phone"/></svg> 01141218126</span>
+        <span><svg class="ic"><use href="#i-pin"/></svg>  القاهره</span>
         <span><svg class="ic"><use href="#i-clock"/></svg> السبت – الخميس · ٩ص – ٦م</span>
       </div>
     </div>
@@ -762,32 +792,51 @@ function pageHome(){
   const featured=products.filter(p=>p.old);
   const main=featured[0]||products[0];
   const side=featured.slice(1,4).length===3?featured.slice(1,4):products.slice(1,4);
-  return '<section class="wrap hero">'+
+  return '<section class="wrap hero" style="grid-template-columns:1fr">'+
     '<div class="hero-copy">'+
-      '<div class="kicker reveal">توريدات عامة — القاهرة · منذ ٢٠٠٩</div>'+
+      '<div class="kicker reveal">توريدات عامة — القاهرة والجيزة</div>'+
       '<h1 class="hero-title reveal">المؤسسة <em>العالمية</em></h1>'+
-      '<p class="hero-sub reveal">كل ما تحتاجه شركتك من توريدات — قرطاسية، تنظيف، تغليف، معدات وأثاث — بأسعار جملة حقيقية وتسليم خلال ٤٨ ساعة داخل القاهرة والجيزة.</p>'+
+      '<p class="hero-sub reveal">كل ما تحتاجه شركتك من توريدات — نظافة، بوفية، مكتبية وتغليف — بأسعار جملة حقيقية وتوريد سريع لجميع المحافظات.</p>'+
       '<div class="hero-cta reveal"><a class="btn btn-solid" href="#/products">تصفّح الكتالوج '+ic('chev')+'</a><a class="btn btn-line" href="#/about">عن الشركة</a></div>'+
-      '<div class="hero-meta reveal">فواتير رسمية · عقود توريد سنوية · شحن لكل محافظات مصر</div>'+
+      '<div class="hero-meta reveal">فواتير رسمية · عقود توريد سنوية · توريد لجميع المحافظات</div>'+
     '</div>'+
-    '<div class="hero-visual reveal">'+
-      '<figure class="hero-photo"><img src="https://picsum.photos/seed/gw-warehouse/720/880.jpg" alt="مخازن المؤسسة العالمية للتوريدات"></figure>'+
-      '<div class="stamp">'+stampSVG+'</div>'+
+  '</section>'+
+  '<section class="wrap reveal">'+
+    '<div class="hero-banner">'+
+      '<div class="hb-swoosh"></div>'+
+      '<div class="hb-badge"><div><b>إشراقة<br>عالمية</b><span>نظافة · بوفية · مكتبية</span></div></div>'+
+      '<h3 class="hb-title">توريدات</h3>'+
+      '<p class="hb-sub">أدوات النظافة والبوفية والمكتبية</p>'+
+      '<div class="hb-rule"><i></i><em></em><i></i></div>'+
+      '<p class="hb-slogan">جودة عالية · أسعار منافسة · توريد سريع</p>'+
+      '<div class="hb-icons">'+
+        '<div class="hb-ic"><span class="cir"><svg viewBox="0 0 24 24"><path d="M4 17h16"/><path d="M6 17a6 6 0 0 1 12 0"/><path d="M12 11V9"/><circle cx="12" cy="8" r="1"/></svg></span><b>بوفية</b></div>'+
+        '<div class="hb-ic"><span class="cir"><svg viewBox="0 0 24 24"><path d="M7 3v18"/><path d="M4.5 3v5a2.5 2.5 0 0 0 5 0V3"/><ellipse cx="16" cy="6" rx="2.5" ry="3.5"/><path d="M16 9.5V21"/></svg></span><b>أدوات بوفية</b><small>أطباق · شواب · معالق · أكواب · مناديل</small></div>'+
+        '<div class="hb-ic"><span class="cir"><svg viewBox="0 0 24 24"><path d="M9 21h6a1 1 0 0 0 1-1v-8a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v8a1 1 0 0 0 1 1z"/><path d="M11 9V6h2"/><path d="M13 6h3l2-2"/></svg></span><b>أدوات نظافة</b></div>'+
+        '<div class="hb-ic"><span class="cir"><svg viewBox="0 0 24 24"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></span><b>أدوات مكتبية</b></div>'+
+      '</div>'+
+      '<div class="hb-bar">'+
+        '<span class="hb-item"><i class="hb-dot"><svg class="ic"><use href="#i-phone"/></svg></i><b dir="ltr">01116750462</b></span>'+
+        '<span class="hb-item"><i class="hb-dot"><svg class="ic"><use href="#i-phone"/></svg></i><b dir="ltr">0114218126</b></span>'+
+        '<span class="hb-item"><i class="hb-dot"><svg class="ic"><use href="#i-pin"/></svg></i>الجيزة - مصر</span>'+
+        '<span class="hb-item"><i class="hb-dot"><svg class="ic"><use href="#i-truck"/></svg></i>توريد لجميع المحافظات</span>'+
+      '</div>'+
+    '</div>'+
+  '</section>'+
+  '<div class="ticker" aria-hidden="true"><div class="ticker-track">'+set+set+'</div></div>'+
+  '<section class="wrap nums reveal">'+
+    stat('١٥+','سنة خبرة في سوق التوريدات')+
+    stat('٢٤٠٠+','عميل من شركات ومصانع ومطاعم')+
+    stat(num(products.length),'منتجاً في الكتالوج الحالي')+
+    stat('٤٨','ساعة كحد أقصى للتسليم')+
+  '</section>'+
+  '<section class="wrap featured reveal">'+
+    '<div class="sec-head"><h2>الأكثر طلباً</h2><a class="more" href="#/products">كل المنتجات '+ic('chev')+'</a></div>'+
+    '<div class="feat-grid">'+
+      '<a class="feat-main" href="#/products"><img src="'+main.img+'" alt="'+esc(main.name)+'"><span class="feat-badge">الأكثر طلباً</span><span class="feat-cap"><b>'+esc(main.name)+'</b><span>'+money(main.price)+'</span></span></a>'+
+      '<div class="feat-side">'+side.map(p=>'<div class="frow"><img src="'+p.img+'" alt=""><div class="finfo"><b>'+esc(p.name)+'</b><span>'+esc(p.cat)+'</span><b class="fprice">'+money(p.price)+'</b></div><button class="ibtn" data-action="add" data-pid="'+p.id+'" aria-label="أضف إلى السلة">'+ic('plus')+'</button></div>').join('')+'</div>'+
     '</div></section>'+
-    '<div class="ticker" aria-hidden="true"><div class="ticker-track">'+set+set+'</div></div>'+
-    '<section class="wrap nums reveal">'+
-      stat('١٥+','سنة خبرة في سوق التوريدات')+
-      stat('٢٤٠٠+','عميل من شركات ومصانع ومطاعم')+
-      stat(num(products.length),'منتجاً في الكتالوج الحالي')+
-      stat('٤٨','ساعة كحد أقصى للتسليم')+
-    '</section>'+
-    '<section class="wrap featured reveal">'+
-      '<div class="sec-head"><h2>الأكثر طلباً</h2><a class="more" href="#/products">كل المنتجات '+ic('chev')+'</a></div>'+
-      '<div class="feat-grid">'+
-        '<a class="feat-main" href="#/products"><img src="'+main.img+'" alt="'+esc(main.name)+'"><span class="feat-badge">الأكثر طلباً</span><span class="feat-cap"><b>'+esc(main.name)+'</b><span>'+money(main.price)+'</span></span></a>'+
-        '<div class="feat-side">'+side.map(p=>'<div class="frow"><img src="'+p.img+'" alt=""><div class="finfo"><b>'+esc(p.name)+'</b><span>'+esc(p.cat)+'</span><b class="fprice">'+money(p.price)+'</b></div><button class="ibtn" data-action="add" data-pid="'+p.id+'" aria-label="أضف إلى السلة">'+ic('plus')+'</button></div>').join('')+'</div>'+
-      '</div></section>'+
-    '<section class="wrap services reveal">'+svcRows+'</section>';
+  '<section class="wrap services reveal">'+svcRows+'</section>';
 }
 
 let catState={cat:'الكل',q:'',sort:'def'};
@@ -1074,7 +1123,7 @@ function handleLogoFile(input){
 
 function pageAbout(){
   return pageHead('عن الشركة','حكايتنا من قلب القاهرة')+
-  '<section class="wrap reveal"><p class="about-state">بدأنا سنة ٢٠٠٩ بغرفة صغيرة وسط البلد ورفّين من الأقلام — والنهاردة بنورّد لأكتر من <mark>٢٤٠٠ عميل</mark> في القاهرة وكل محافظات مصر.</p></section>'+
+  '<section class="wrap reveal"><p class="about-state">بدأنا سنة 2018 بغرفة صغيرة وسط البلد ورفّين من الأقلام — والنهاردة بنورّد لأكتر من <mark>٢٤٠٠ عميل</mark> في القاهرة وكل محافظات مصر.</p></section>'+
   '<section class="wrap about-grid reveal">'+
     '<div class="about-story">'+
       '<p>المؤسسة العالمية للتوريدات مش مجرد مورّد — إحنا شريك تشغيل. بنفهم إن المصنع اللي ناقصه كراتين تغليف بيوقف خط إنتاج، والشركة اللي خلصانة ورق الطابعة بتبطئ. عشان كده بنشغل بعقلية المخزن الصفري: طلبك بيتجهز في نفس اليوم، وبيوصلك خلال ٤٨ ساعة.</p>'+
@@ -1082,18 +1131,17 @@ function pageAbout(){
       '<p>هدفنا بسيط: نكون أول رقم يخطر في بال أي مدير مكتب أو صاحب مصنع في مصر لما يحتاج يورّد — بأسعار جملة حقيقية، وفاتورة رسمية، ومن غير مكالمات متأخرة ولا اعتذارات.</p>'+
     '</div>'+
     '<dl class="facts">'+
-      '<div class="fact"><dt>سنة التأسيس</dt><dd>٢٠٠٩</dd></div>'+
-      '<div class="fact"><dt>المقر الرئيسي</dt><dd>١٥ شارع رمسيس، القاهرة</dd></div>'+
-      '<div class="fact"><dt>فريق العمل</dt><dd>٤٥ فرداً</dd></div>'+
+      '<div class="fact"><dt>سنة التأسيس</dt><dd>2018</dd></div>'+
+      '<div class="fact"><dt>المقر الرئيسي</dt><dd>القاهرة</dd></div>'+
       '<div class="fact"><dt>نطاق التغطية</dt><dd>كل محافظات مصر</dd></div>'+
       '<div class="fact"><dt>نظام الأسعار</dt><dd>جملة ومفرق</dd></div>'+
       '<div class="fact"><dt>ساعات العمل</dt><dd>السبت – الخميس · ٩ص – ٦م</dd></div>'+
     '</dl></section>'+
   '<section class="wrap reveal"><div class="sec-head"><h2>مبادئنا في الشغل</h2></div>'+svcRows+'</section>'+
   '<section class="wrap reveal"><div class="contact-cta">'+
-    '<div><h2>جاهزين لتوريد احتياجات شركتك؟</h2><div class="cphone">010 0123 4567</div></div>'+
+    '<div><h2>جاهزين لتوريد احتياجات شركتك؟</h2><div class="cphone">01141218126</div></div>'+
     '<div class="citems">'+
-      '<span>'+ic('pin')+' ١٥ شارع رمسيس، القاهرة</span>'+
+      '<span>'+ic('pin')+' القاهرة</span>'+
       '<span>'+ic('clock')+' السبت – الخميس · ٩ص – ٦م</span>'+
       '<span>'+ic('truck')+' تسليم ٤٨ ساعة داخل القاهرة والجيزة</span>'+
       '<a class="btn btn-inv" href="#/products" style="margin-top:8px">ابدئي من الكتالوج '+ic('chev')+'</a>'+
