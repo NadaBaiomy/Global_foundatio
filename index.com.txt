@@ -413,6 +413,8 @@ tbody tr:last-child td{border-bottom:0}
   .hb-badge b{font-size:.78rem}
   .hb-badge span{font-size:.44rem}
 }
+.wa-btn{background:#25D366;border-color:#128C7E;color:#fff;width:100%;justify-content:center}
+.wa-btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
 
 </style>
 </head>
@@ -544,7 +546,7 @@ tbody tr:last-child td{border-bottom:0}
 document.documentElement.classList.add('js');
 
 const CUSTOM_LOGO_URL = "";
-
+const WHATSAPP_NUMBER = "201141218126"; /* رقم الواتساب: 20 + الرقم من غير الصفر الأول */
 const $  = (s,r=document)=>r.querySelector(s);
 const $$ = (s,r=document)=>Array.prototype.slice.call(r.querySelectorAll(s));
 const ARF = new Intl.NumberFormat('ar-EG');
@@ -749,6 +751,29 @@ function openCheckout(){
       '<button class="btn btn-solid w100">'+ic('truck')+' تأكيد الطلب — '+money(t.total)+'</button>'+
     '</form></div>');
 }
+function openWhatsappModal(order){
+  const lines = order.items.map(function(i,n){ return (n+1)+') '+i.name+' × '+i.qty+' = '+(i.price*i.qty)+' ج.م'; });
+  let msg = '🛒 طلب جديد من الموقع';
+  msg += '\nرقم الطلب: '+ordCode(order.id);
+  msg += '\n👤 الاسم: '+order.customer.name;
+  msg += '\n📱 الموبايل: '+order.customer.phone;
+  msg += '\n📍 العنوان: '+order.customer.address;
+  if(order.customer.notes) msg += '\n📝 ملاحظات: '+order.customer.notes;
+  msg += '\n—————————';
+  msg += '\n'+lines.join('\n');
+  msg += '\n—————————';
+  msg += '\n🚚 الشحن: '+(order.shipping===0?'مجاناً':order.shipping+' ج.م');
+  msg += '\n💰 الإجمالي: '+order.total+' ج.م';
+  const url='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg);
+  openModal(mHead('تم استلام طلبك ✅')+
+    '<div class="modal-body" style="text-align:center">'+
+    '<p style="margin-bottom:6px">رقم طلبك <b style="font-family:var(--f-head);font-size:1.25rem;color:var(--green-deep)">'+ordCode(order.id)+'</b></p>'+
+    '<p class="muted" style="font-size:.9rem;margin-bottom:18px">اثبتي طلبك بإرسال التفاصيل على واتساب — وهنرد عليك في أسرع وقت.</p>'+
+    '<a class="btn wa-btn" href="'+url+'" target="_blank" rel="noopener">'+ic('phone')+' إرسال الطلب على واتساب</a>'+
+    '<div class="btn-row" style="justify-content:center;margin-top:10px"><button class="btn btn-line sm" data-action="close-modal">مش دلوقتي</button></div>'+
+    '</div>');
+}
+
 function mark(form,name,valid){
   form.querySelector('[name="'+name+'"]').closest('.field').classList.toggle('bad',!valid);
   return valid;
@@ -771,7 +796,8 @@ function handleCheckout(form){
   saveProducts();
   cart=[]; saveCart(); renderCartCount();
   closeCart(); closeModal();
-  toast('تم استلام طلبك بنجاح — رقم الطلب '+ordCode(order.id),'truck');
+    toast('تم استلام طلبك بنجاح — رقم الطلب '+ordCode(order.id),'truck');
+  openWhatsappModal(order);
   if(location.hash==='#/orders') render(); else location.hash='#/orders';
 }
 
