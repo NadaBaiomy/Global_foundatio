@@ -564,20 +564,20 @@ const LS = {
   del(k){ try{localStorage.removeItem('gw_'+k)}catch(e){} }
 };
 
-const CATS = ['أدوات مكتبية','تنظيف ونظافة','تغليف وتعبئة','أجهزة ومعدات','أثاث مكتبي'];
+const CATS = ['أدوات مكتبية','ادوات نظافه','تغليف وتعبئة','ادوات البوفيه','شركاؤونا في النجاح'];
 const SEED_PRODUCTS = [
   {id:1, name:'ورق تصوير A4 فاخر — كرتونة ٥ رزم', cat:'أدوات مكتبية', price:1250, old:1420, stock:140, img:'https://picsum.photos/seed/gw-a4/640/480.jpg',      desc:'٨٠ جرام بياض ثابت — الاقتصاد في الاستهلاك والسعر.'},
   {id:2, name:'أقلام جاف سليدر — علبة ٥٠ قلم',    cat:'أدوات مكتبية', price:185,  old:0,    stock:320, img:'https://picsum.photos/seed/gw-pens/640/480.jpg',     desc:'كتابة سلسة ٠٫٧ ملم — ألوان مختارة للشركات.'},
   {id:3, name:'ورق لاصق ملون — ١٢ دفتر',          cat:'أدوات مكتبية', price:240,  old:280,  stock:95,  img:'https://picsum.photos/seed/gw-sticky/640/480.jpg',   desc:'ثبات قوي بدون أثر على الأوراق والزجاج.'},
-  {id:4, name:'منظف أرضيات مركّز — جالون ٢٠ لتر', cat:'تنظيف ونظافة', price:460,  old:0,    stock:60,  img:'https://picsum.photos/seed/gw-clean/640/480.jpg',    desc:'تركيز عالٍ يكفي مساحات كبيرة — رائحة منعشة.'},
-  {id:5, name:'موب مغسول — كرتونة ١٢ قطعة',       cat:'تنظيف ونظافة', price:215,  old:0,    stock:80,  img:'https://picsum.photos/seed/gw-mop/640/480.jpg',      desc:'قطن ماص مع مقبض معدني متين.'},
+  {id:4, name:'منظف أرضيات مركّز — جالون ٢٠ لتر', cat:'ادوات النظافه', price:460,  old:0,    stock:60,  img:'https://picsum.photos/seed/gw-clean/640/480.jpg',    desc:'تركيز عالٍ يكفي مساحات كبيرة — رائحة منعشة.'},
+  {id:5, name:'موب مغسول — كرتونة ١٢ قطعة',       cat:'ادوات النظافه', price:215,  old:0,    stock:80,  img:'https://picsum.photos/seed/gw-mop/640/480.jpg',      desc:'قطن ماص مع مقبض معدني متين.'},
   {id:6, name:'لفة فوم فقاعات للتغليف — ٥٠ متر',  cat:'تغليف وتعبئة', price:540,  old:610,  stock:45,  img:'https://picsum.photos/seed/gw-bubble/640/480.jpg',   desc:'حماية مضاعفة للشحنات الحساسة والزجاج.'},
   {id:7, name:'كراتين تغليف مقاسات متعددة — ١٠٠', cat:'تغليف وتعبئة', price:890,  old:0,    stock:70,  img:'https://picsum.photos/seed/gw-boxes/640/480.jpg',    desc:'كرتون مضلع مقاوم — ٤ مقاسات في الطرد.'},
-  {id:8, name:'طابعة فواتير حرارية ٨٠ ملم',       cat:'أجهزة ومعدات', price:3400, old:3750, stock:18,  img:'https://picsum.photos/seed/gw-printer/640/480.jpg',  desc:'سريعة وصامتة — تشتغل مع أنظمة الكاشير المشهورة.'},
-  {id:9, name:'قارئ باركود ليزري — سلكي',         cat:'أجهزة ومعدات', price:1650, old:0,    stock:26,  img:'https://picsum.photos/seed/gw-scanner/640/480.jpg',  desc:'قراءة فورية حتى للباركود التالف — مقاوم للغبار.'},
-  {id:10,name:'كرسي مكتب دوار — شبك تنفس',        cat:'أثاث مكتبي',   price:2850, old:3100, stock:22,  img:'https://picsum.photos/seed/gw-chair/640/480.jpg',    desc:'ظهر شبك مهوّى مع مساند قابلة للتعديل.'},
-  {id:11,name:'مكتب موظف ١٤٠ سم — خشب MDF',       cat:'أثاث مكتبي',   price:4700, old:0,    stock:14,  img:'https://picsum.photos/seed/gw-desk/640/480.jpg',     desc:'سطح مقاوم للخدش مع درج جانبي قفل.'},
-  {id:12,name:'طاولة اجتماعات — ٦ أفراد',         cat:'أثاث مكتبي',   price:6900, old:7400, stock:8,   img:'https://picsum.photos/seed/gw-table/640/480.jpg',    desc:'تصميم عملي بخطوط نظيفة تناسب أي إدارة.'}
+  {id:8, name:'طابعة فواتير حرارية ٨٠ ملم',       cat:'ادوات البوفيه', price:3400, old:3750, stock:18,  img:'https://picsum.photos/seed/gw-printer/640/480.jpg',  desc:'سريعة وصامتة — تشتغل مع أنظمة الكاشير المشهورة.'},
+  {id:9, name:'قارئ باركود ليزري — سلكي',         cat:'ادوات البوفيه', price:1650, old:0,    stock:26,  img:'https://picsum.photos/seed/gw-scanner/640/480.jpg',  desc:'قراءة فورية حتى للباركود التالف — مقاوم للغبار.'},
+  {id:10,name:'كرسي مكتب دوار — شبك تنفس',        cat:'شركاؤونا في النجاح',   price:2850, old:3100, stock:22,  img:'https://picsum.photos/seed/gw-chair/640/480.jpg',    desc:'ظهر شبك مهوّى مع مساند قابلة للتعديل.'},
+  {id:11,name:'مكتب موظف ١٤٠ سم — خشب MDF',       cat:'شركاؤونا في النجاح',   price:4700, old:0,    stock:14,  img:'https://picsum.photos/seed/gw-desk/640/480.jpg',     desc:'سطح مقاوم للخدش مع درج جانبي قفل.'},
+  {id:12,name:'طاولة اجتماعات — ٦ أفراد',         cat:'شركاؤونا في النجاح',   price:6900, old:7400, stock:8,   img:'https://picsum.photos/seed/gw-table/640/480.jpg',    desc:'تصميم عملي بخطوط نظيفة تناسب أي إدارة.'}
 ];
 const STATUSES = ['قيد المراجعة','جاري التحضير','تم الشحن','تم التسليم','ملغي'];
 const STEPS = ['تم الاستلام','جاري التحضير','تم الشحن','تم التسليم'];
@@ -786,7 +786,7 @@ const svcRows=[
 ].map(r=>'<div class="svc"><b>'+r[0]+'</b><h3>'+r[1]+'</h3><p>'+r[2]+'</p></div>').join('');
 
 function pageHome(){
-  const items=['أدوات مكتبية','تنظيف ونظافة','تغليف وتعبئة','أجهزة ومعدات','أثاث مكتبي','أسعار جملة حقيقية','تسليم ٤٨ ساعة','فواتير رسمية'];
+  const items=['أدوات مكتبية','تنظيف ونظافة','تغليف وتعبئة','ادوات البوفيه','شركاؤونا في النجاح','أسعار جملة حقيقية','تسليم ٤٨ ساعة','فواتير رسمية'];
   const spans=items.map(t=>'<span>'+t+'</span><i>◆</i>').join('');
   const set='<div class="tick-set">'+spans+'</div>';
   const featured=products.filter(p=>p.old);
