@@ -1044,7 +1044,7 @@ function pageAdmin(){
       '<div class="lockic">'+ic('lock')+'</div>'+
       '<h3>دخول لوحة الإدارة</h3>'+
       '<form id="loginForm" novalidate>'+
-        '<div class="field"><label>رمز الدخول</label><input type="password" name="pass" placeholder="••••" autocomplete="off"><span class="err">رمز غير صحيح — </span></div>'+
+        '<div class="field"><label>رمز الدخول</label><input type="password" name="pass" placeholder="••••" autocomplete="off"><span class="err">رمز غير صحيح — حاولي مرة تانية</span></div>'+
         '<button class="btn btn-solid w100">'+ic('check')+' دخول</button></form>'+
     '</div></section>';
   }
@@ -1071,7 +1071,7 @@ function pageAdmin(){
 }
 function handleLogin(form){
   const v=form.querySelector('[name="pass"]').value;
-  if(v==='ahmed@nour'){ adminUnlocked=true; toast('أهلاً بك في لوحة الإدارة','check'); render(); }
+  if(v==='ahmed@nour'){ adminUnlocked=true; toast('أهلاً بك في لوحة الإدارة','check'); render(); } }
   else form.querySelector('[name="pass"]').closest('.field').classList.add('bad');
 }
 function openProductModal(pid){
