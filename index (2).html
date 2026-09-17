@@ -559,9 +559,9 @@ const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&l
 const ic = (n,c='')=>'<svg class="ic '+c+'" aria-hidden="true"><use href="#i-'+n+'"/></svg>';
 
 const LS = {
-  get(k,f){ try{const v=localStorage.getItem('gw_'+k);return v!=null?JSON.parse(v):f}catch(e){return f} },
-  set(k,v){ try{localStorage.setItem('gw_'+k,JSON.stringify(v))}catch(e){} },
-  del(k){ try{localStorage.removeItem('gw_'+k)}catch(e){} }
+  get(k,f){ try{const v=localStorage.getItem('gw2_'+k);return v!=null?JSON.parse(v):f}catch(e){return f} },
+  set(k,v){ try{localStorage.setItem('gw2_'+k,JSON.stringify(v))}catch(e){} },
+  del(k){ try{localStorage.removeItem('gw2_'+k)}catch(e){} }
 };
 
 const CATS = ['أدوات مكتبية','ادوات نظافه','تغليف وتعبئة','ادوات البوفيه'];
